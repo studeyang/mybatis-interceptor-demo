@@ -1,6 +1,7 @@
 package com.oujiong.entity;
 
-import com.oujiong.plugin.AutoId;
+import com.oujiong.plugin.autoid.AutoId;
+import com.oujiong.plugin.encrypt.EncryptField;
 import lombok.Data;
 
 import java.util.Date;
@@ -9,7 +10,7 @@ import java.util.Date;
  * user表
  */
 @Data
-public class TabUser {
+public class UserEntity {
     /**
      * id(添加自定义主键ID)
      */
@@ -20,6 +21,12 @@ public class TabUser {
      * 姓名
      */
     private String name;
+
+    /**
+     * 身份证
+     */
+    @EncryptField
+    private String idCard;
 
     /**
      * 性别
@@ -45,5 +52,4 @@ public class TabUser {
      * 是否删除 1删除 0未删除
      */
     private Integer status;
-
 }

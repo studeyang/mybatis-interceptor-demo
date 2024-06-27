@@ -1,4 +1,4 @@
-package com.oujiong.plugin;
+package com.oujiong.plugin.autoid;
 
 import java.lang.annotation.*;
 

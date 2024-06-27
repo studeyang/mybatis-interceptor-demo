@@ -1,15 +1,14 @@
-package com.oujiong.plugin;
+package com.oujiong.plugin.autoid;
 
-import com.google.common.base.Predicate;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.MappedStatement;
+import org.apache.ibatis.mapping.SqlCommandType;
 import org.apache.ibatis.plugin.*;
 import org.reflections.ReflectionUtils;
 
 import java.lang.reflect.Field;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
-
 
 /**
  * @author xub
@@ -24,7 +23,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class AutoIdInterceptor implements Interceptor {
 
     /**
-     *  key值为class对象 value可以理解成是该类带有AutoId注解的属性，只不过对属性封装了一层。
+     * key值为class对象 value可以理解成是该类带有AutoId注解的属性，只不过对属性封装了一层。
      * 它是非常能够提高性能的处理器 它的作用就是不用每一次一个对象经来都要看下它的哪些属性带有AutoId注解
      * 毕竟类的反射在性能上并不友好。只要key包含该对象那就不需要检查它哪些属性带AutoId注解。
      */
@@ -37,7 +36,7 @@ public class AutoIdInterceptor implements Interceptor {
         MappedStatement mappedStatement = (MappedStatement) args[0];
         //实体对象
         Object entity = args[1];
-        if ("INSERT".equalsIgnoreCase(mappedStatement.getSqlCommandType().name())) {
+        if (SqlCommandType.INSERT == mappedStatement.getSqlCommandType()) {
             // 获取实体集合
             Set<Object> entitySet = getEntitySet(entity);
             // 批量设置id
@@ -78,20 +77,13 @@ public class AutoIdInterceptor implements Interceptor {
         Class handlerKey = object.getClass();
         List<Handler> handlerList = handlerMap.get(handlerKey);
 
-        //TODO 性能优化点，如果有两个都是user对象同时,那么只需有个进行反射处理属性就好了,另一个只需执行下面的for循环
-        SYNC:
         if (handlerList == null) {
             synchronized (this) {
-                handlerList = handlerMap.get(handlerKey);
-                //如果到这里map集合已经存在，则跳出到指定SYNC标签
-                if (handlerList != null) {
-                    break SYNC;
-                }
                 handlerMap.put(handlerKey, handlerList = new ArrayList<>());
                 // 反射工具类 获取带有AutoId注解的所有属性字段
                 Set<Field> allFields = ReflectionUtils.getAllFields(
                         object.getClass(),
-                        (Predicate<Field>) input -> input != null && input.getAnnotation(AutoId.class) != null
+                        input -> input != null && input.getAnnotation(AutoId.class) != null
                 );
                 for (Field field : allFields) {
                     AutoId annotation = field.getAnnotation(AutoId.class);
@@ -123,6 +115,7 @@ public class AutoIdInterceptor implements Interceptor {
         Handler(Field field) {
             this.field = field;
         }
+
         abstract void handle(Field field, Object object) throws Throwable;
 
         private boolean checkField(Object object, Field field) throws IllegalAccessException {
@@ -144,6 +137,7 @@ public class AutoIdInterceptor implements Interceptor {
         UUIDHandler(Field field) {
             super(field);
         }
+
         /**
          * 1、插入UUID主键
          */
@@ -157,6 +151,7 @@ public class AutoIdInterceptor implements Interceptor {
         UniqueLongHandler(Field field) {
             super(field);
         }
+
         /**
          * 2、插入Long类型雪花ID
          */
@@ -170,6 +165,7 @@ public class AutoIdInterceptor implements Interceptor {
         UniqueLongHexHandler(Field field) {
             super(field);
         }
+
         /**
          * 3、插入String类型雪花ID
          */

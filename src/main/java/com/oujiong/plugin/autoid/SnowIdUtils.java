@@ -1,4 +1,4 @@
-package com.oujiong.plugin;
+package com.oujiong.plugin.autoid;
 
 import lombok.extern.slf4j.Slf4j;
 
