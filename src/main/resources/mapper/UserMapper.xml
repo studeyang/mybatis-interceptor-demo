@@ -4,6 +4,7 @@
   <resultMap id="BaseResultMap" type="com.oujiong.entity.TabUser">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="name_enc" jdbcType="VARCHAR" property="nameEnc" />
     <result column="sex" jdbcType="VARCHAR" property="sex" />
     <result column="age" jdbcType="INTEGER" property="age" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
@@ -11,34 +12,33 @@
     <result column="status" jdbcType="INTEGER" property="status" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, name, sex, age, create_time, update_time, status
+    id, name, name_enc, sex, age, create_time, update_time, status
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from user
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
   </select>
 
   <insert id="insert" parameterType="com.oujiong.entity.TabUser">
-    insert into user (id, name, sex,
+    insert into user (id, name, name_enc, sex,
       age, create_time, update_time,
       status)
-    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR},
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{nameEnc,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR},
       #{age,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP},
       #{status,jdbcType=INTEGER})
   </insert>
 
   <insert id="insertForeach" parameterType="java.util.List" useGeneratedKeys="false">
-    insert into user (id, name, sex,
+    insert into user (id, name, name_enc, sex,
     age, create_time, update_time,
     status)
     values
     <foreach collection="list" item="item" index="index" separator=",">
-      (#{item.id,jdbcType=BIGINT}, #{item.name,jdbcType=VARCHAR}, #{item.sex,jdbcType=VARCHAR},
+      (#{item.id,jdbcType=BIGINT}, #{item.name,jdbcType=VARCHAR}, #{nameEnc,jdbcType=VARCHAR},#{item.sex,jdbcType=VARCHAR},
       #{item.age,jdbcType=INTEGER}, #{item.createTime,jdbcType=TIMESTAMP}, #{item.updateTime,jdbcType=TIMESTAMP},
       #{item.status,jdbcType=INTEGER})
-
     </foreach>
   </insert>
 
