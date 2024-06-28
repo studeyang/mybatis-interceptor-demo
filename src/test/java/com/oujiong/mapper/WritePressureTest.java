@@ -25,7 +25,7 @@ import java.util.concurrent.*;
 public class WritePressureTest {
 
     @Autowired
-    private UserMapper userMapper;
+    private UserPressureMapper userMapper;
     @Autowired
     private WriteEncryptInterceptor writeEncryptInterceptor;
 

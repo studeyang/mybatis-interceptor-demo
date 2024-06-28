@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oujiong.mapper.UserPressureMapper">
+  <resultMap id="BaseResultMap" type="com.oujiong.entity.TabUser">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="name_enc" jdbcType="VARCHAR" property="nameEnc" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="status1" jdbcType="INTEGER" property="status1" />
+    <result column="status2" jdbcType="INTEGER" property="status2" />
+    <result column="status3" jdbcType="INTEGER" property="status3" />
+    <result column="status4" jdbcType="INTEGER" property="status4" />
+    <result column="status5" jdbcType="INTEGER" property="status5" />
+    <result column="status6" jdbcType="INTEGER" property="status6" />
+    <result column="status7" jdbcType="INTEGER" property="status7" />
+    <result column="status8" jdbcType="INTEGER" property="status8" />
+    <result column="status9" jdbcType="INTEGER" property="status9" />
+    <result column="status10" jdbcType="INTEGER" property="status10" />
+    <result column="status11" jdbcType="INTEGER" property="status11" />
+    <result column="status12" jdbcType="INTEGER" property="status12" />
+    <result column="status13" jdbcType="INTEGER" property="status13" />
+    <result column="status14" jdbcType="INTEGER" property="status14" />
+    <result column="status15" jdbcType="INTEGER" property="status15" />
+    <result column="status16" jdbcType="INTEGER" property="status16" />
+    <result column="status17" jdbcType="INTEGER" property="status17" />
+    <result column="status18" jdbcType="INTEGER" property="status18" />
+    <result column="status19" jdbcType="INTEGER" property="status19" />
+    <result column="status20" jdbcType="INTEGER" property="status20" />
+    <result column="status21" jdbcType="INTEGER" property="status21" />
+    <result column="status22" jdbcType="INTEGER" property="status22" />
+    <result column="status23" jdbcType="INTEGER" property="status23" />
+    <result column="status24" jdbcType="INTEGER" property="status24" />
+    <result column="status25" jdbcType="INTEGER" property="status25" />
+    <result column="status26" jdbcType="INTEGER" property="status26" />
+    <result column="status27" jdbcType="INTEGER" property="status27" />
+    <result column="status28" jdbcType="INTEGER" property="status28" />
+    <result column="status29" jdbcType="INTEGER" property="status29" />
+    <result column="status30" jdbcType="INTEGER" property="status30" />
+    <result column="status31" jdbcType="INTEGER" property="status31" />
+    <result column="status32" jdbcType="INTEGER" property="status32" />
+    <result column="status33" jdbcType="INTEGER" property="status33" />
+    <result column="status34" jdbcType="INTEGER" property="status34" />
+    <result column="status35" jdbcType="INTEGER" property="status35" />
+    <result column="status36" jdbcType="INTEGER" property="status36" />
+    <result column="status37" jdbcType="INTEGER" property="status37" />
+    <result column="status38" jdbcType="INTEGER" property="status38" />
+    <result column="status39" jdbcType="INTEGER" property="status39" />
+    <result column="status40" jdbcType="INTEGER" property="status40" />
+    <result column="status41" jdbcType="INTEGER" property="status41" />
+    <result column="status42" jdbcType="INTEGER" property="status42" />
+    <result column="status43" jdbcType="INTEGER" property="status43" />
+    <result column="status44" jdbcType="INTEGER" property="status44" />
+    <result column="status45" jdbcType="INTEGER" property="status45" />
+    <result column="status46" jdbcType="INTEGER" property="status46" />
+    <result column="status47" jdbcType="INTEGER" property="status47" />
+    <result column="status48" jdbcType="INTEGER" property="status48" />
+    <result column="status49" jdbcType="INTEGER" property="status49" />
+    <result column="status50" jdbcType="INTEGER" property="status50" />
+    <result column="status51" jdbcType="INTEGER" property="status51" />
+    <result column="status52" jdbcType="INTEGER" property="status52" />
+    <result column="status53" jdbcType="INTEGER" property="status53" />
+    <result column="status54" jdbcType="INTEGER" property="status54" />
+    <result column="status55" jdbcType="INTEGER" property="status55" />
+    <result column="status56" jdbcType="INTEGER" property="status56" />
+    <result column="status57" jdbcType="INTEGER" property="status57" />
+    <result column="status58" jdbcType="INTEGER" property="status58" />
+    <result column="status59" jdbcType="INTEGER" property="status59" />
+    <result column="status60" jdbcType="INTEGER" property="status60" />
+    <result column="status61" jdbcType="INTEGER" property="status61" />
+    <result column="status62" jdbcType="INTEGER" property="status62" />
+    <result column="status63" jdbcType="INTEGER" property="status63" />
+    <result column="status64" jdbcType="INTEGER" property="status64" />
+    <result column="status65" jdbcType="INTEGER" property="status65" />
+    <result column="status66" jdbcType="INTEGER" property="status66" />
+    <result column="status67" jdbcType="INTEGER" property="status67" />
+    <result column="status68" jdbcType="INTEGER" property="status68" />
+    <result column="status69" jdbcType="INTEGER" property="status69" />
+    <result column="status70" jdbcType="INTEGER" property="status70" />
+    <result column="status71" jdbcType="INTEGER" property="status71" />
+    <result column="status72" jdbcType="INTEGER" property="status72" />
+    <result column="status73" jdbcType="INTEGER" property="status73" />
+    <result column="status74" jdbcType="INTEGER" property="status74" />
+    <result column="status75" jdbcType="INTEGER" property="status75" />
+    <result column="status76" jdbcType="INTEGER" property="status76" />
+    <result column="status77" jdbcType="INTEGER" property="status77" />
+    <result column="status78" jdbcType="INTEGER" property="status78" />
+    <result column="status79" jdbcType="INTEGER" property="status79" />
+    <result column="status80" jdbcType="INTEGER" property="status80" />
+    <result column="status81" jdbcType="INTEGER" property="status81" />
+    <result column="status82" jdbcType="INTEGER" property="status82" />
+    <result column="status83" jdbcType="INTEGER" property="status83" />
+    <result column="status84" jdbcType="INTEGER" property="status84" />
+    <result column="status85" jdbcType="INTEGER" property="status85" />
+    <result column="status86" jdbcType="INTEGER" property="status86" />
+    <result column="status87" jdbcType="INTEGER" property="status87" />
+    <result column="status88" jdbcType="INTEGER" property="status88" />
+    <result column="status89" jdbcType="INTEGER" property="status89" />
+    <result column="status90" jdbcType="INTEGER" property="status90" />
+    <result column="status91" jdbcType="INTEGER" property="status91" />
+    <result column="status92" jdbcType="INTEGER" property="status92" />
+    <result column="status93" jdbcType="INTEGER" property="status93" />
+    <result column="status94" jdbcType="INTEGER" property="status94" />
+    <result column="status95" jdbcType="INTEGER" property="status95" />
+    <result column="status96" jdbcType="INTEGER" property="status96" />
+    <result column="status97" jdbcType="INTEGER" property="status97" />
+    <result column="status98" jdbcType="INTEGER" property="status98" />
+    <result column="status99" jdbcType="INTEGER" property="status99" />
+    <result column="status100" jdbcType="INTEGER" property="status100" />
+
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, name_enc, sex, age, create_time, update_time, status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from user_pressure
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+
+  <insert id="insert" parameterType="com.oujiong.entity.TabUser">
+    insert into user_pressure (id, name, name_enc, sex,
+      age, create_time, update_time,
+      status, status1, status2, status3, status4, status5, status6, status7, status8, status9, status10, status11, status12, status13, status14, status15, status16, status17, status18, status19, status20, status21, status22, status23, status24, status25, status26, status27, status28, status29, status30, status31, status32, status33, status34, status35, status36, status37, status38, status39, status40, status41, status42, status43, status44, status45, status46, status47, status48, status49, status50, status51, status52, status53, status54, status55, status56, status57, status58, status59, status60, status61, status62, status63, status64, status65, status66, status67, status68, status69, status70, status71, status72, status73, status74, status75, status76, status77, status78, status79, status80, status81, status82, status83, status84, status85, status86, status87, status88, status89, status90, status91, status92, status93, status94, status95, status96, status97, status98, status99, status100)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{nameEnc,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR},
+      #{age,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP},
+      #{status,jdbcType=INTEGER}, #{status1,jdbcType=INTEGER}, #{status2,jdbcType=INTEGER}, #{status3,jdbcType=INTEGER}, #{status4,jdbcType=INTEGER}, #{status5,jdbcType=INTEGER}, #{status6,jdbcType=INTEGER}, #{status7,jdbcType=INTEGER}, #{status8,jdbcType=INTEGER}, #{status9,jdbcType=INTEGER}, #{status10,jdbcType=INTEGER}, #{status11,jdbcType=INTEGER}, #{status12,jdbcType=INTEGER}, #{status13,jdbcType=INTEGER}, #{status14,jdbcType=INTEGER}, #{status15,jdbcType=INTEGER}, #{status16,jdbcType=INTEGER}, #{status17,jdbcType=INTEGER}, #{status18,jdbcType=INTEGER}, #{status19,jdbcType=INTEGER}, #{status20,jdbcType=INTEGER}, #{status21,jdbcType=INTEGER}, #{status22,jdbcType=INTEGER}, #{status23,jdbcType=INTEGER}, #{status24,jdbcType=INTEGER}, #{status25,jdbcType=INTEGER}, #{status26,jdbcType=INTEGER}, #{status27,jdbcType=INTEGER}, #{status28,jdbcType=INTEGER}, #{status29,jdbcType=INTEGER}, #{status30,jdbcType=INTEGER}, #{status31,jdbcType=INTEGER}, #{status32,jdbcType=INTEGER}, #{status33,jdbcType=INTEGER}, #{status34,jdbcType=INTEGER}, #{status35,jdbcType=INTEGER}, #{status36,jdbcType=INTEGER}, #{status37,jdbcType=INTEGER}, #{status38,jdbcType=INTEGER}, #{status39,jdbcType=INTEGER}, #{status40,jdbcType=INTEGER}, #{status41,jdbcType=INTEGER}, #{status42,jdbcType=INTEGER}, #{status43,jdbcType=INTEGER}, #{status44,jdbcType=INTEGER}, #{status45,jdbcType=INTEGER}, #{status46,jdbcType=INTEGER}, #{status47,jdbcType=INTEGER}, #{status48,jdbcType=INTEGER}, #{status49,jdbcType=INTEGER}, #{status50,jdbcType=INTEGER}, #{status51,jdbcType=INTEGER}, #{status52,jdbcType=INTEGER}, #{status53,jdbcType=INTEGER}, #{status54,jdbcType=INTEGER}, #{status55,jdbcType=INTEGER}, #{status56,jdbcType=INTEGER}, #{status57,jdbcType=INTEGER}, #{status58,jdbcType=INTEGER}, #{status59,jdbcType=INTEGER}, #{status60,jdbcType=INTEGER}, #{status61,jdbcType=INTEGER}, #{status62,jdbcType=INTEGER}, #{status63,jdbcType=INTEGER}, #{status64,jdbcType=INTEGER}, #{status65,jdbcType=INTEGER}, #{status66,jdbcType=INTEGER}, #{status67,jdbcType=INTEGER}, #{status68,jdbcType=INTEGER}, #{status69,jdbcType=INTEGER}, #{status70,jdbcType=INTEGER}, #{status71,jdbcType=INTEGER}, #{status72,jdbcType=INTEGER}, #{status73,jdbcType=INTEGER}, #{status74,jdbcType=INTEGER}, #{status75,jdbcType=INTEGER}, #{status76,jdbcType=INTEGER}, #{status77,jdbcType=INTEGER}, #{status78,jdbcType=INTEGER}, #{status79,jdbcType=INTEGER}, #{status80,jdbcType=INTEGER}, #{status81,jdbcType=INTEGER}, #{status82,jdbcType=INTEGER}, #{status83,jdbcType=INTEGER}, #{status84,jdbcType=INTEGER}, #{status85,jdbcType=INTEGER}, #{status86,jdbcType=INTEGER}, #{status87,jdbcType=INTEGER}, #{status88,jdbcType=INTEGER}, #{status89,jdbcType=INTEGER}, #{status90,jdbcType=INTEGER}, #{status91,jdbcType=INTEGER}, #{status92,jdbcType=INTEGER}, #{status93,jdbcType=INTEGER}, #{status94,jdbcType=INTEGER}, #{status95,jdbcType=INTEGER}, #{status96,jdbcType=INTEGER}, #{status97,jdbcType=INTEGER}, #{status98,jdbcType=INTEGER}, #{status99,jdbcType=INTEGER}, #{status100,jdbcType=INTEGER})
+  </insert>
+
+  <insert id="insertForeach" parameterType="java.util.List" useGeneratedKeys="false">
+    insert into user (id, name, name_enc, sex,
+    age, create_time, update_time,
+    status)
+    values
+    <foreach collection="list" item="item" index="index" separator=",">
+      (#{item.id,jdbcType=BIGINT}, #{item.name,jdbcType=VARCHAR}, #{nameEnc,jdbcType=VARCHAR},#{item.sex,jdbcType=VARCHAR},
+      #{item.age,jdbcType=INTEGER}, #{item.createTime,jdbcType=TIMESTAMP}, #{item.updateTime,jdbcType=TIMESTAMP},
+      #{item.status,jdbcType=INTEGER})
+    </foreach>
+  </insert>
+
+  <insert id="insertSelective" parameterType="com.oujiong.entity.TabUser">
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="age != null">
+        age,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null">
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+
+  <update id="updateByPrimaryKeySelective" parameterType="com.oujiong.entity.TabUser">
+    update user
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null">
+        age = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

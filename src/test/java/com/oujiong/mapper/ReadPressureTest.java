@@ -23,13 +23,13 @@ import java.util.concurrent.*;
 public class ReadPressureTest {
 
     @Autowired
-    private UserMapper userMapper;
+    private UserPressureMapper userMapper;
     @Autowired
     private ReadEncryptInterceptor readEncryptInterceptor;
 
     private Executor executor;
 
-    private static final Integer TIMES = 100;
+    private static final Integer TIMES = 1000;
 
     @Before
     public void setUp() {
@@ -38,7 +38,7 @@ public class ReadPressureTest {
 
     private Runnable getTask(boolean print) {
         return () -> {
-            TabUser user = userMapper.selectByPrimaryKey(679403741908963328L);
+            TabUser user = userMapper.selectByPrimaryKey(316L);
             if (print) {
                 System.out.println(Thread.currentThread().getName() + ": " + user);
             }
