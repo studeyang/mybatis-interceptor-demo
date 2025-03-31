@@ -3,7 +3,7 @@ CREATE TABLE `user`
     `id`          bigint(20)                        NOT NULL AUTO_INCREMENT COMMENT 'id',
     `name`        varchar(64) CHARACTER SET utf8mb4 NOT NULL DEFAULT '' COMMENT '姓名',
     `id_card`     varchar(100)                               DEFAULT NULL COMMENT '身份证',
-    `sex`         varchar(16) CHARACTER SET utf8mb4          DEFAULT NULL COMMENT '性别',
+    `mobile`         varchar(64) CHARACTER SET utf8mb4          DEFAULT NULL COMMENT '手机号',
     `age`         int(255)                                   DEFAULT NULL COMMENT '年龄',
     `create_time` datetime                          NOT NULL COMMENT '创建时间',
     `update_time` datetime                          NOT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',

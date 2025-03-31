@@ -1,7 +1,5 @@
 package com.oujiong.plugin.encrypt;
 
-import com.oujiong.plugin.encrypt.EncryptField;
-import com.oujiong.plugin.encrypt.EncryptUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.MappedStatement;

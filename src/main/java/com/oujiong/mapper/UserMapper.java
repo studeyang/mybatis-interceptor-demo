@@ -1,6 +1,10 @@
 package com.oujiong.mapper;
 
 import com.oujiong.entity.UserEntity;
+import com.oujiong.plugin.encrypt.QueryMobile;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * @author xub
@@ -24,5 +28,8 @@ public interface UserMapper {
      * @return 实体对象
      */
     UserEntity selectByPrimaryKey(Long id);
+
+    @QueryMobile
+    List<UserEntity> selectByMobile(@Param("mobiles") List<String> mobiles);
 
 }

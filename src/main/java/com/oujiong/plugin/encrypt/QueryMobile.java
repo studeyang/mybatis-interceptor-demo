@@ -8,7 +8,7 @@ import java.lang.annotation.*;
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.FIELD)
-public @interface EncryptField {
+@Target(ElementType.METHOD)
+public @interface QueryMobile {
 
 }

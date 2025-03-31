@@ -2,6 +2,7 @@ package com.oujiong.entity;
 
 import com.oujiong.plugin.autoid.AutoId;
 import com.oujiong.plugin.encrypt.EncryptField;
+import com.oujiong.plugin.encrypt.EncryptMobileField;
 import lombok.Data;
 
 import java.util.Date;
@@ -29,9 +30,10 @@ public class UserEntity {
     private String idCard;
 
     /**
-     * 性别
+     * 手机号
      */
-    private String sex;
+    @EncryptMobileField
+    private String mobile;
 
     /**
      * 年龄

@@ -13,6 +13,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -26,6 +27,7 @@ import java.util.Collections;
  * @date 2019/8/19 下午12:31
  */
 @Configuration
+@EnableAspectJAutoProxy(exposeProxy = true)
 @ComponentScan(basePackageClasses = DalModule.class)
 @MapperScan(basePackages = "com.oujiong.mapper")
 public class DalModule {
@@ -36,7 +38,7 @@ public class DalModule {
     @Bean
     public DataSource dataSource() {
         DruidDataSource druidDataSource = new DruidDataSource();
-        druidDataSource.setUrl("jdbc:mysql://10.204.209.137:3306/send2?useUnicode=true&characterEncoding=UTF-8");
+        druidDataSource.setUrl("jdbc:mysql://10.204.209.137:3306/send2?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false");
         druidDataSource.setDriverClassName("com.mysql.jdbc.Driver");
         druidDataSource.setUsername("send2");
         druidDataSource.setPassword("send2123.com");
@@ -93,6 +95,7 @@ public class DalModule {
         sessionFactory.getConfiguration().addInterceptor(new AutoIdInterceptor());
         sessionFactory.getConfiguration().addInterceptor(writeEncryptInterceptor);
         sessionFactory.getConfiguration().addInterceptor(readEncryptInterceptor);
+//        sessionFactory.getConfiguration().addInterceptor(new ReadMobileInterceptor());
 
         return sessionFactory;
     }

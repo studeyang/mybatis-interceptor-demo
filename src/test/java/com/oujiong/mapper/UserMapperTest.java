@@ -1,5 +1,6 @@
 package com.oujiong.mapper;
 
+import com.google.common.collect.Lists;
 import com.oujiong.entity.UserEntity;
 import com.oujiong.plugin.encrypt.EncryptUtils;
 import junit.framework.TestCase;
@@ -10,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author <a href="mailto:studeyang@gmail.com">studeyang</a>
@@ -35,7 +37,7 @@ public class UserMapperTest extends TestCase {
         UserEntity user = new UserEntity();
         user.setName("张三");
         user.setIdCard("442222111233322210");
-        user.setSex("男");
+        user.setMobile("18061882949");
         user.setAge(0);
         user.setCreateTime(new Date());
         user.setUpdateTime(new Date());
@@ -46,8 +48,14 @@ public class UserMapperTest extends TestCase {
 
     @Test
     public void selectByPrimaryKey() {
-        UserEntity user = userMapper.selectByPrimaryKey(682230480968224768L);
+        UserEntity user = userMapper.selectByPrimaryKey(778759086472564736L);
         System.out.println(user);
+    }
+
+    @Test
+    public void selectByMobile() {
+        List<UserEntity> users = userMapper.selectByMobile(Lists.newArrayList("18061882949"));
+        System.out.println(users);
     }
 
 }

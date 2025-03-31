@@ -6,7 +6,7 @@
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="id_card" jdbcType="VARCHAR" property="idCard" />
-    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
     <result column="age" jdbcType="INTEGER" property="age" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
@@ -14,7 +14,7 @@
   </resultMap>
 
   <sql id="Base_Column_List">
-    id, `name`, id_card, sex, age, create_time, update_time, `status`
+    id, `name`, id_card, mobile, age, create_time, update_time, `status`
   </sql>
 
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
@@ -24,10 +24,21 @@
     where id = #{id,jdbcType=BIGINT}
   </select>
 
+  <select id="selectByMobile" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from user
+    where
+    mobile in
+    <foreach collection="mobiles" item="item" open="(" separator="," close=")" >
+      #{item}
+    </foreach>
+  </select>
+
   <insert id="insert" parameterType="com.oujiong.entity.UserEntity">
-    insert into user (id, name, id_card, sex, age,
+    insert into user (id, name, id_card, mobile, age,
                       create_time, update_time, status)
-    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{idCard,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR},
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{idCard,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR},
             #{age,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP},
             #{status,jdbcType=INTEGER})
   </insert>
